@@ -11,7 +11,7 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Developed the app React.js
-Styling done using node js
+Developed the app React.js \
+Styling done using node js \
 Google Firebase is used for authentication and Firestore is used as the database
 
