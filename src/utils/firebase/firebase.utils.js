@@ -1,5 +1,5 @@
 import {initializeApp} from 'firebase/app';
-import {getAuth, signInWithRedirect, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword} from 'firebase/auth';
+import {getAuth, signInWithRedirect, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth';
 import {getFirestore, doc,getDoc, setDoc} from 'firebase/firestore'
 
 const firebaseConfig = {
@@ -31,7 +31,7 @@ export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
 
 export const db = getFirestore();
 
-export const createUserDocumentFromAuth = async (userAuth, addInfo) => {
+export const createUserDocumentFromAuth = async (userAuth, addInfo = {}) => {
 
     if (!userAuth) return;
 
@@ -53,6 +53,11 @@ export const createUserDocumentFromAuth = async (userAuth, addInfo) => {
       console.log("Error in writing user to Firestore");
     }
     return userDocRef;
+};
+
+export const signinUserAuth = async (email,password) => {
+
+ return await signInWithEmailAndPassword(auth,email,password);
 };
 
 // export const createAuthUserWithEmailAndPassword = async (email, password) => {
