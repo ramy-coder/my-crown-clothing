@@ -10,7 +10,7 @@ export const ItemContext = createContext( {
 
 export const ItemProvider = ({children}) => {
 
-    const [Items,setcurrentItem] = useState(PRODUCTS);
+    const [Items] = useState(PRODUCTS);
     const value = {Items};
 
 
