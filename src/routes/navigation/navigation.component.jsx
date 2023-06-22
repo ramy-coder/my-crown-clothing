@@ -22,6 +22,10 @@ const Navigation = () => {
         await signOutUser();
         setCurrentUser(null);
     }
+
+    // <Link to='/checkout'>
+    // checkout
+    // </Link>
     return (
     <Fragment>
         <div className = 'navigation'>
@@ -38,6 +42,8 @@ const Navigation = () => {
                <Carticon/>
              
              </div>
+
+
              {isCartOpen && <CartDropdown/>}
             </div>  
           <Outlet />
